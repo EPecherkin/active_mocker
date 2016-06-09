@@ -203,6 +203,10 @@ module ActiveMocker
           a
         end
       end
+
+      def columns_hash
+        @columns_hash = schema_scrapper.attributes.__send__(:model).columns_hash
+      end
     end
 
     module ClassMethods

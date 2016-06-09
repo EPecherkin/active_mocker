@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 module ActiveMocker
+  ColumnType = Struct.new(:type)
+
   class Base
     include DoNothingActiveRecordMethods
     include TemplateMethods

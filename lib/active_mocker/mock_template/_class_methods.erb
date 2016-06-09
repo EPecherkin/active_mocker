@@ -8,6 +8,14 @@
       @types ||= ActiveMocker::HashProcess.new(<%= types_hash %>, method(:build_type)).merge(super)
     end
 
+    def columns_hash
+      @columns_hash ||= {
+        <% columns_hash.each do |k, v| %>
+          '<%= k %>' => ActiveMocker::ColumnType.new(:<%= v.type %>),
+        <% end %>
+      }
+    end
+
     def associations
       @associations ||= <%= associations %>.merge(super)
     end
