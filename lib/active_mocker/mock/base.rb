@@ -178,6 +178,17 @@ module ActiveMocker
       assign_attributes(attributes, &block)
     end
 
+    def valid?
+      true
+    end
+
+    def invalid?
+      false
+    end
+
+    def validate!
+    end
+
     def setup_instance_variables
       @types        = self.class.send(:types)
       @attributes   = self.class.send(:attributes).dup
